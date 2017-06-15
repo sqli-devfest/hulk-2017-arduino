@@ -47,9 +47,9 @@ void loop() {
    }
    if (!mesure){
     if (random(4) == 1){
-          blinkAll(400);
-          blinkAll(400);
-          blinkAll(400);
+          k2000(100);
+          k2000(100);
+          k2000(100);
     }else{
       chase(100);
     }
@@ -65,10 +65,18 @@ void chase(int delaySeconds){
 }
 
 void k2000(int delaySeconds){
-  for (int ledPin=2; ledPin <= 11; ledPin++){
-     digitalWrite(ledPin, HIGH);   // sets the LED on
+  for (int ledPin=2; ledPin <= 10; ledPin++){
+     digitalWrite(ledPin-1, LOW);   // sets the LED on
+     digitalWrite(ledPin, HIGH);    // sets the LED off
+     digitalWrite(ledPin+1, HIGH);   // sets the LED on
      delay(delaySeconds);                  // waits for a second
-     digitalWrite(ledPin, LOW);    // sets the LED off
+  } 
+  for (int ledPin=10; ledPin >= 2; ledPin--){
+     digitalWrite(ledPin-1, LOW);   // sets the LED on
+     digitalWrite(ledPin, HIGH);    // sets the LED off
+     digitalWrite(ledPin+1, HIGH);   // sets the LED on
+     delay(delaySeconds);                  // waits for a second
+     
   } 
 }
 
