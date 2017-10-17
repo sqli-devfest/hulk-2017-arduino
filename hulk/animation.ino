@@ -1,4 +1,7 @@
 
+ #define HIGH_HULK 0x0
+ #define LOW_HULK  0x1
+
 int iteration = 0;
 
 void animate() {
@@ -28,54 +31,54 @@ void turnOn(int rank) {
   chase(170);
   chase(200);
   for (int ledPin = 2; ledPin <= rank+1; ledPin++) {
-    digitalWrite(ledPin, HIGH);   // sets the LED on
+    digitalWrite(ledPin, HIGH_HULK);   // sets the LED on
     delay(200);                  // waits for a second
-    digitalWrite(ledPin, LOW);    // sets the LED off
+    digitalWrite(ledPin, LOW_HULK);    // sets the LED off
   }
-  digitalWrite(rank+1, HIGH);   // sets the LED on
+  digitalWrite(rank+1, HIGH_HULK);   // sets the LED on
 }
 
 void chase(int delaySeconds) {
   for (int ledPin = 2; ledPin <= 11; ledPin++) {
-    digitalWrite(ledPin, HIGH);   // sets the LED on
+    digitalWrite(ledPin, HIGH_HULK);   // sets the LED on
     delay(delaySeconds);                  // waits for a second
-    digitalWrite(ledPin, LOW);    // sets the LED off
+    digitalWrite(ledPin, LOW_HULK);    // sets the LED off
   }
 }
 
 void k2000(int delaySeconds) {
   for (int ledPin = 2; ledPin <= 10; ledPin++) {
-    digitalWrite(ledPin - 1, LOW); // sets the LED on
-    digitalWrite(ledPin, HIGH);    // sets the LED off
-    digitalWrite(ledPin + 1, HIGH); // sets the LED on
+    digitalWrite(ledPin - 1, LOW_HULK); // sets the LED on
+    digitalWrite(ledPin, HIGH_HULK);    // sets the LED off
+    digitalWrite(ledPin + 1, HIGH_HULK); // sets the LED on
     delay(delaySeconds);                  // waits for a second
   }
   for (int ledPin = 10; ledPin >= 2; ledPin--) {
-    digitalWrite(ledPin + 1, LOW); // sets the LED on
-    digitalWrite(ledPin, HIGH);    // sets the LED off
-    digitalWrite(ledPin - 1, HIGH); // sets the LED on
+    digitalWrite(ledPin + 1, LOW_HULK); // sets the LED on
+    digitalWrite(ledPin, HIGH_HULK);    // sets the LED off
+    digitalWrite(ledPin - 1, HIGH_HULK); // sets the LED on
     delay(delaySeconds);                  // waits for a second
   }
 }
 
 void blinkAll(int delaySeconds) {
   for (int ledPin = 2; ledPin <= 11; ledPin++) {
-    digitalWrite(ledPin, HIGH);   // sets the LED on
+    digitalWrite(ledPin, HIGH_HULK);   // sets the LED on
   }
   delay(delaySeconds);                  // waits for a second
   for (int ledPin = 2; ledPin <= 11; ledPin++) {
-    digitalWrite(ledPin, LOW);    // sets the LED off
+    digitalWrite(ledPin, LOW_HULK);    // sets the LED off
   }
   delay(delaySeconds);
 }
 
 void blinkEvenOddl(int delaySeconds) {
   for (int ledPin = 2; ledPin <= 11; ledPin = ledPin + 2) {
-    digitalWrite(ledPin, HIGH);   // sets the LED on
+    digitalWrite(ledPin, HIGH_HULK);   // sets the LED on
   }
   delay(delaySeconds);                  // waits for a second
   for (int ledPin = 3; ledPin <= 11; ledPin = ledPin + 2) {
-    digitalWrite(ledPin, LOW);    // sets the LED off
+    digitalWrite(ledPin, LOW_HULK);    // sets the LED off
   }
   delay(delaySeconds);
 }

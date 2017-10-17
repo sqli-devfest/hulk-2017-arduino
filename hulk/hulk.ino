@@ -29,7 +29,7 @@ void loop() {
         // Lit la valeur sur A0 ( 0 - 1023)
         sensorValue = analogRead(A0);
         chase(10);
-      } while (sensorValue < 100);
+      } while (sensorValue < 400);
 
       // On envoi la réponse sur le port Serial
       Serial.println(sensorValue);
